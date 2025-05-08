@@ -1,0 +1,28 @@
+{
+  "name": "fpv-gpx-map",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jasper-Claus/FPV-GPX-map.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Jasper-Claus/FPV-GPX-map/issues"
+  },
+  "homepage": "https://github.com/Jasper-Claus/FPV-GPX-map#readme",
+  "dependencies": {
+    "@mapbox/togeojson": "^0.16.2",
+    "xmldom": "^0.6.0"
+  }
+}
