@@ -23,6 +23,8 @@
   "homepage": "https://github.com/Jasper-Claus/FPV-GPX-map#readme",
   "dependencies": {
     "@mapbox/togeojson": "^0.16.2",
+    "express": "^5.1.0",
+    "multer": "^1.4.5-lts.2",
     "xmldom": "^0.6.0"
   }
 }

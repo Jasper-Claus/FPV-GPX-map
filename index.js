@@ -1,42 +1,23 @@
-const togeojson = require("@mapbox/togeojson");
-const { error } = require("console");
-const Domparser = require("xmldom").DOMParser;
-const fs = require("fs");
+document.getElementById("upload").addEventListener("change", async (event) => {
+    const file = event.target.files[0];
+    if (!file) {
+        alert("Bitte wähle eine Datei aus.");
+        return;
+    }
 
-const config = {};
+    const formData = new FormData();
+    formData.append("gpxfile", file); // Feldname wie in server.js
 
-const args = process.argv.slice(2);
+    try {
+        const res = await fetch("/upload", {
+            method: "POST",
+            body: formData,
+        });
 
-args.forEach((val) => {
-    const flag = val.split("=");
-
-    switch (flag[0]) {
-        case "--input":
-            config.input_file = flag[1];
-            break;
-        case "--output":
-            config.output_file = flag[1];
-            break;
+        const result = await res.text();
+        alert(result); // Zeige Serverantwort
+    } catch (err) {
+        console.error("Fehler beim Upload:", err);
+        alert("Upload fehlgeschlagen.");
     }
 });
-
-if (config.input_file) {
-    const fileParsedFromDom = new Domparser().parseFromString(
-        fs.readFileSync(config.input_file, "utf-8"),
-        "text/xml"
-    );
-
-    const converted = togeojson.gpx(fileParsedFromDom);
-    if (config.output_file) {
-        fs.writeFile(config.output_file, JSON.stringify(converted), (error) => {
-            if (error) {
-                throw new Error(error);
-            }
-            console.log("success!!");
-        });
-    } else {
-        throw new Error("output file not defined");
-    }
-} else {
-    throw new Error("input file not defined");
-}
