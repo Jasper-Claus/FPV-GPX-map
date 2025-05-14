@@ -8,7 +8,7 @@ const DOMParser = require("xmldom").DOMParser;
 const app = express();
 const upload = multer({ dest: "uploads/" });
 
-app.use(express.static(".")); // damit index.html erreichbar ist
+app.use(express.static(".")); 
 
 app.post("/upload", upload.single("gpxfile"), (req, res) => {
     if (!req.file) {
@@ -22,7 +22,7 @@ app.post("/upload", upload.single("gpxfile"), (req, res) => {
     const outputPath = path.join(__dirname, "output.geojson");
     fs.writeFileSync(outputPath, JSON.stringify(geojson, null, 2));
 
-    // Aufräumen: temporäre Upload-Datei löschen
+
     fs.unlinkSync(req.file.path);
 
     res.send(

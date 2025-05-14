@@ -6,7 +6,7 @@ document.getElementById("upload").addEventListener("change", async (event) => {
     }
 
     const formData = new FormData();
-    formData.append("gpxfile", file); // Feldname wie in server.js
+    formData.append("gpxfile", file);
 
     try {
         const res = await fetch("/upload", {
