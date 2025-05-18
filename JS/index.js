@@ -15,7 +15,7 @@ document.getElementById("upload").addEventListener("change", async (event) => {
         });
 
         const result = await res.text();
-        alert(result); // Zeige Serverantwort
+        alert(result); 
     } catch (err) {
         console.error("Fehler beim Upload:", err);
         alert("Upload fehlgeschlagen.");

@@ -4,9 +4,19 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    margin: 0;
+    padding: 0;
+}
+html,
+
+body,
+#map {
+    height: 100%;
+}
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: "Arial", sans-serif;
     background-color: #e9ecef;
     display: flex;
     flex-direction: column;
@@ -43,7 +53,7 @@ body {
 }
 
 input[type="file"] {
-    display: none   ;
+    display: none;
     padding: 10px;
     margin: 10px 0;
     font-size: 1rem;
@@ -86,4 +96,3 @@ label:active {
 input[type="file"]:focus + label {
     outline: 2px solid #28a745;
 }
-
