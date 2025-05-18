@@ -3,21 +3,29 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>FPV_GPX_Map</title>
         <link rel="stylesheet" href="style/style.css" />
+        <link
+            rel="stylesheet"
+            href="https://api.maptiler.com/maps/basic-v2/?key=KXiuL64C2nqwc10eNPbu#9.4/50.90362/10.39667"
+        />
+        <script src="https://unpkg.com/maplibre-gl@5.5.0/dist/maplibre-gl.js"></script>
     </head>
     <body>
+        <br>
+        <br>
+        <br>
         <div class="head">
             <h1 id="headline">FPV_GPX_Map</h1>
         </div>
 
         <div class="file-upload">
             <input id="upload" type="file" accept=".gpx" />
-            <label for="upload">Wählen Sie eine GPX-Datei aus</label>        </div>
-
-            <div id="map"></div>
-
-
+            <label for="upload">Wählen Sie eine GPX-Datei aus</label>
+        </div>
+        <br/>
+        <br>
+        <div id="map"></div>
 
         <script src="JS/index.js"></script>
         <script src="JS/map.js"></script>
